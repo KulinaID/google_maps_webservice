@@ -2,6 +2,7 @@ library google_maps_webservice.places.autocomplete.example;
 
 import 'dart:async';
 import 'dart:io';
+
 import 'package:google_maps_webservice/places.dart';
 
 final places = GoogleMapsPlaces(apiKey: Platform.environment['API_KEY']);
@@ -26,9 +27,9 @@ Future<void> main() async {
     );
 
     print('\nDetails :');
-    print(details.result.formattedAddress);
-    print(details.result.formattedPhoneNumber);
-    print(details.result.url);
+    print(details.result?.formattedAddress);
+    print(details.result?.formattedPhoneNumber);
+    print(details.result?.url);
   } else {
     print(res.errorMessage);
   }

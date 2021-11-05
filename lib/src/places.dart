@@ -818,7 +818,7 @@ enum PriceLevel {
 
 @JsonSerializable()
 class PlacesDetailsResponse extends GoogleResponseStatus {
-  final PlaceDetails result;
+  final PlaceDetails? result;
 
   /// JSON html_attributions
   @JsonKey(defaultValue: <String>[])
@@ -827,7 +827,7 @@ class PlacesDetailsResponse extends GoogleResponseStatus {
   PlacesDetailsResponse({
     required String status,
     String? errorMessage,
-    required this.result,
+    this.result,
     required this.htmlAttributions,
   }) : super(
           status: status,
